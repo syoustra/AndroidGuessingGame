@@ -42,7 +42,7 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int userGuess = Integer.parseInt(guess.getText().toString());
                 if (userGuess > 100) {
-                    clueTextView.setText("Enter a number between 1 and 100.");
+                    clueTextView.setText(R.string.invalid_number_message);
                     clueTextView.setVisibility(View.VISIBLE);
                     guess.setText("");
                 } else {
@@ -59,12 +59,12 @@ public class GameActivity extends AppCompatActivity {
         } else if (numberOfGuesses == MAX_GUESS_COUNT) {
             //TODO -- create intent to go to winning activity -- handle out of chaances
         } else if (userGuess < generatedNumber) {
-            clueTextView.setText("Higher");
+            clueTextView.setText(R.string.higher);
             clueTextView.setVisibility(View.VISIBLE);
             guess.setText("");
             numberOfGuesses++;
         } else if (userGuess > generatedNumber) {
-            clueTextView.setText("Lower");
+            clueTextView.setText(R.string.lower);
             clueTextView.setVisibility(View.VISIBLE);
             guess.setText("");
             numberOfGuesses++;
